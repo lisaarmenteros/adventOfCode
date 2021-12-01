@@ -1,6 +1,6 @@
 # Advent of Code - Day 1 Problem 2
 
-inputFile = open ('d1p1_input.txt','r')
+inputFile = open ('d1_input.txt','r')
 
 Lines = inputFile.readlines()
 count = 0
