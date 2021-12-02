@@ -1,6 +1,6 @@
 # Advent of Code - Day 2 Problem 2
 
-inputFile = open ('d2_input.txt','r')
+inputFile = open ('input/d2_input.txt','r')
 
 Lines = inputFile.readlines()
 depth=0
