@@ -8,7 +8,7 @@ horzpos=0
 
 
 
-for i in range (len(Lines)-1):
+for i in range (len(Lines)):
     instruction = Lines[i].split()
     if(instruction[0] == "forward"):
         horzpos += int(instruction[1])
