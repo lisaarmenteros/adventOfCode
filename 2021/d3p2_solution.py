@@ -29,8 +29,6 @@ def removeZeros(listOfBinary, index):
 def removeOnes(listOfBinary, index):
     for i in range(len(listOfBinary)):
         if list(listOfBinary[i])[index] == "1":
-            #print(list(listOfBinary[i])[index])
-            #print("deleting ", listOfBinary[i])
             del listOfBinary[i]
             listOfBinary.insert(0,emptylist) # Adding empty item equal in size to not disrupt list/array size
     return listOfBinary
