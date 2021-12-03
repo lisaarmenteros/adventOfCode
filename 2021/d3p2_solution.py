@@ -4,8 +4,6 @@ inputFile = open ('input/d3_input.txt','r')
 
 listOfBinary = inputFile.readlines()
 listOfBinary2 = listOfBinary.copy()
-oxygenGenerator = []
-carbonScrubber = []
 
 lengthofBinary = len(list(listOfBinary[0])) - 1
 emptylist = [None] * lengthofBinary
@@ -48,13 +46,10 @@ for i in range(lengthofBinary):
             break
     if numones > numzeros:
         listOfBinary = removeZeros(listOfBinary, i)
-        #oxygenGenerator.append("1")
     elif numones < numzeros:
         listOfBinary = removeOnes(listOfBinary, i)
-        #oxygenGenerator.append("0")
     elif numones == numzeros:
         listOfBinary = removeZeros(listOfBinary, i)
-        #oxygenGenerator.append("1")
 
 oxygenGenerator = convertToDecimal(list(listOfBinary[-1]))
 
