@@ -59,7 +59,6 @@ for i in range(lengthofBinary):
         #oxygenGenerator.append("1")
 
 oxygenGenerator = convertToDecimal(list(listOfBinary[-1]))
-print(oxygenGenerator)
 
 # Calculate Carbon
 for i in range(lengthofBinary):
@@ -81,9 +80,7 @@ for i in range(lengthofBinary):
         listOfBinary2 = removeOnes(listOfBinary2, i)
 
 carbonScrubber = convertToDecimal(list(listOfBinary2[-1]))
-print(carbonScrubber)
 
 print(oxygenGenerator * carbonScrubber)
 
 inputFile.close() 
-
