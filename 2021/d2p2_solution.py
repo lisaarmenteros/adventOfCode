@@ -7,6 +7,7 @@ depth=0
 horzpos=0
 aim=0
 
+# Matches the keywords in instructions to make adjustments to submarine's horizontal postition, depth, and aim
 for i in range (len(Lines)):
     instruction = Lines[i].split()
     if(instruction[0] == "forward"):

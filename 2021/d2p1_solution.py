@@ -6,6 +6,7 @@ Lines = inputFile.readlines()
 depth=0
 horzpos=0
 
+# Matches the keywords in instructions to make adjustments to submarine's horizontal postition and depth
 for i in range (len(Lines)):
     instruction = Lines[i].split()
     if(instruction[0] == "forward"):

@@ -1,5 +1,4 @@
 # Advent of Code - Day 3 Problem 1
-# Extremely brute-force solution. May work on something more clean
 
 inputFile = open ('input/d3_input.txt','r')
 
@@ -9,6 +8,7 @@ length = len(list(Lines[0])) - 1
 gamma = 0
 epsilon=0
 
+# Iterates through list of binary numbers and calculates gamma & epsilon based on most and least occuring number in index
 for i in range(length):
     numzeros=0
     numones=0
@@ -19,10 +19,11 @@ for i in range(length):
         if binary[i] == "0":
             numzeros += 1 
     if numones > numzeros:
-        gamma += (2 ** (length -1 - i))
+        gamma += (2 ** (length -1 - i)) # Converts binary to decimal as it moves through indexes
     if numones < numzeros:
-        epsilon += (2 ** (length -1 - i))
+        epsilon += (2 ** (length -1 - i)) # Converts binary to decimal as it moves through indexes
 
+# Prints power consumption of the submarine
 print(gamma * epsilon)
 
 inputFile.close()

@@ -1,14 +1,15 @@
 # Advent of Code - Day 3 Problem 2
+# Extremely brute-force solution. May work on something more clean (possibly with recursion)
 
 inputFile = open ('input/d3_input.txt','r')
 
 listOfBinary = inputFile.readlines()
 listOfBinary2 = listOfBinary.copy()
 
-lengthofBinary = len(list(listOfBinary[0])) - 1
+lengthofBinary = len(list(listOfBinary[0])) - 1 # Sub one to account for appended /n
 emptylist = [None] * lengthofBinary
 
-# Function which takes in a list making up binary list and converts it into an int in decimal form
+# Function which takes in a list making up binary number and converts it into an int in decimal form
 def convertToDecimal(binaryNumList):
     decimal = 0
     for i in range(lengthofBinary):
@@ -32,7 +33,8 @@ def removeOnes(listOfBinary, index):
     return listOfBinary
 
 
-# Calculate Oxygen 
+# Calculate oxygen generator rating by iterating through list of binary numbers and removing items from the list 
+# based on the most occuring number within each index
 for i in range(lengthofBinary):
     numzeros=0
     numones=0
@@ -42,8 +44,12 @@ for i in range(lengthofBinary):
                 numones+=1
             if binary[i] == "0":
                 numzeros += 1 
-    if listOfBinary[-2] == emptylist: # Break early if there is only one number left
+    
+    # Break early if there is only one number left
+    if listOfBinary[-2] == emptylist: 
             break
+
+    # Check cases for number of zeros & ones in order to determine what binary number must be removed from list
     if numones > numzeros:
         listOfBinary = removeZeros(listOfBinary, i)
     elif numones < numzeros:
@@ -53,7 +59,8 @@ for i in range(lengthofBinary):
 
 oxygenGenerator = convertToDecimal(list(listOfBinary[-1]))
 
-# Calculate Carbon
+# Calculate CO2 scrubber rating by iterating through list of binary numbers and removing items from the list 
+# based on the least occuring number within each index
 for i in range(lengthofBinary):
     numzeros=0
     numones=0
@@ -63,8 +70,12 @@ for i in range(lengthofBinary):
             numones+=1
         if binary[i] == "0":
             numzeros += 1 
-    if listOfBinary2[-2] == emptylist: # Break early if there is only one number left
+    
+    # Break early if there is only one number left
+    if listOfBinary2[-2] == emptylist: 
             break
+    
+    # Check cases for number of zeros & ones in order to determine what binary number must be removed from list
     if numones > numzeros:
         listOfBinary2 = removeOnes(listOfBinary2, i)
     elif numones < numzeros:
@@ -74,6 +85,7 @@ for i in range(lengthofBinary):
 
 carbonScrubber = convertToDecimal(list(listOfBinary2[-1]))
 
+# Calculate life support rating and print results
 print(oxygenGenerator * carbonScrubber)
 
 inputFile.close() 
