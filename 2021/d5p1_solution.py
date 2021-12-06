@@ -26,7 +26,6 @@ for i in range(len(lines)):
         elif int(coordinates[0][1]) > int(coordinates[1][1]):  
             # Check if the range of y coordinates exist already in dictionary, if not, add it. If, so increment the counter
             for j in range(int(coordinates[1][1]), int(coordinates[0][1]) + 1):
-                print(j)
                 if (int(coordinates[0][0]),j) in overlappingLines:
                     overlappingLines[int(coordinates[0][0]),j] += 1
                 else:
@@ -44,7 +43,6 @@ for i in range(len(lines)):
                     overlappingLines[j, int(coordinates[0][1])] = 1
         elif int(coordinates[0][0]) > int(coordinates[1][0]): 
             for j in range(int(coordinates[1][0]), int(coordinates[0][0]) + 1):
-                print(j)
                 if (j, int(coordinates[0][1])) in overlappingLines:
                     overlappingLines[j, int(coordinates[0][1])] += 1
                 else:
