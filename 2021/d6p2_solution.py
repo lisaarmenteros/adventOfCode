@@ -1,5 +1,4 @@
 # Advent of Code - Day 6 Problem 2
-# This needs to be improved as it currently takes forever to complete
 
 inputFile = open ('input/d6_input.txt','r')
 lines = inputFile.readlines()
