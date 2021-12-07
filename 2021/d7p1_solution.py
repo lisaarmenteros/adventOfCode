@@ -5,7 +5,7 @@ inputFile = open ('input/d7_input.txt','r')
 lines = inputFile.readlines()
 lines = list(map(int, lines[0].split(",")))
 
-
+# Calculates the fuel cost by taking that array of fish distances and number to calculate distance from
 def calculateFuel(list, middle):
     fuel = 0
     for i in range(len(list)):
@@ -15,7 +15,7 @@ def calculateFuel(list, middle):
 # Sort input
 lines.sort()
 
-# Get two middle numbers in case the number is even and check which provides a cheaper fuel result
+# Get two middle numbers (in case the number is even) and check which provides a cheaper fuel result
 middle = lines[int(len(lines)/2)]
 middle2 = lines[int((len(lines)/2)) - 1]
 
@@ -26,3 +26,5 @@ if total < total2:
     print(total)
 else:
     print(total2)
+
+inputFile.close()
