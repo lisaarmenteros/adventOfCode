@@ -24,7 +24,7 @@ for i in range(len(lines)):
 
 # Cicle through 80 days
 for i in range(80):
-    # If there are a number of fishes with age zero, add this number of fish at age 8 after decreasing the age of fish by one
+    # If there are a number of fishes with age zero, add this number of fish at age 8 and age 6 after decreasing the age of fish by one
     # This is accomplished by shifting the ages down
     if ageOfFish[0][1] > 0:
         numZeros = ageOfFish[0][1]
