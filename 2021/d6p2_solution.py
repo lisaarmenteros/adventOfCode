@@ -38,7 +38,6 @@ for i in range(256):
     else: 
         for j in range(8):
             ageOfFish[j][1] = ageOfFish[j + 1][1]
-            
         ageOfFish[8][1] = 0
 
 for i in range(9):
