@@ -6,13 +6,13 @@ lines = inputFile.readlines()
 lines = list(map(int, lines[0].split(",")))
 
 # Calculates the fuel cost by taking that array of fish distances and number to calculate distance from
+# For 1 + 2 + 3 + ..... + n: sum is n(n + 1) / 2
 def calculateFuel(lines, cheapest):
     fuel = 0
     total = 0
     for i in range(len(lines)):
         difference =  abs(cheapest - lines[i]) 
-        for j in range(difference + 1):
-            total += j
+        total += (int((difference * (difference + 1)) / 2))
         fuel += total
         total = 0
     return fuel
