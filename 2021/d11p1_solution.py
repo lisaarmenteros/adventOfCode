@@ -30,10 +30,10 @@ def flash(octopus, x, y):
         flash(octopus, x + 1, y + 1) # LowerRight
         flash(octopus, x - 1, y + 1) # LowerLeft
 
-    
+
 timesFlashed = 0
 
-# Complete 100 steps/energy levels
+# Complete 100 steps
 for i in range(100):
     # Iterate through the graph of octopus
     for y in range(len(octopus)):
