@@ -12,11 +12,7 @@ class Graph:
     # Recursive function to work in combo with printAllPaths(). Prints all paths from n to d
     # Vistied[] will keep track of all lowercase vertices visited 
     # Path will store all the vertices visited
-    def printAllPathsUtil(self, n, d, visited, path, numberOfPaths):
-
-        # Append the node to the path
-        path.append(n)
-
+    def printAllPathsUtil(self, n, d, visited, numberOfPaths):
         # Mark current node as visited if it is a lower case set of letters. Capital lettered nodes can be 
         # visited any number of times so we do not have to worry about marking them for visits
         if n.islower():
@@ -24,16 +20,14 @@ class Graph:
         
         # If the current node is our destination increment the number of paths
         if n == d:
-            #print(path)
             numberOfPaths[0] += 1
         else:
             # Current node is not our destination so we must continue recurively through all the edges
             for i in self.graph[n]:
                 if visited[i] == False:
-                    self.printAllPathsUtil(i, d, visited, path, numberOfPaths)
+                    self.printAllPathsUtil(i, d, visited, numberOfPaths)
         
         # Remove current node from path and mark it as unvisited
-        path.pop()
         visited[n] = False
 
     # Prints all possible paths from start (s) to end (e)
@@ -44,13 +38,10 @@ class Graph:
         for i in self.graph:
             visited[i] = False
 
-        # Create array to store paths
-        path = []
-
         # Counter for number of paths
         numberOfPaths = [0]
 
-        self.printAllPathsUtil(s, e, visited, path, numberOfPaths)
+        self.printAllPathsUtil(s, e, visited, numberOfPaths)
 
         print(numberOfPaths)
 
