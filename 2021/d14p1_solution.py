@@ -1,6 +1,5 @@
 # Advent of Code - Day 14 Problem 1
 
-# B, C, F, H, K, N, O, P, S, V
 def checkOccurrences(polymer):
     occurrences = {}
     
@@ -45,7 +44,6 @@ def main():
         lines[i] = lines[i].strip().split(" -> ")
         instructions[lines[i][0]] = lines[i][1] 
 
-    print(polymer)
     pairinsertion(polymer, instructions, 10)
 
 main()
