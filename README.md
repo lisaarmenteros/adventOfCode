@@ -12,3 +12,8 @@ javac ${FILENAME}.java
 java ${FILENAME}
 ```
 
+### Executing C++ File
+```
+g++ -o ${FILENAME} ${FILENAME}.cpp
+./${FILENAME}
+```
