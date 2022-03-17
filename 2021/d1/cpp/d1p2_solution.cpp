@@ -5,9 +5,8 @@
 
 using namespace std;
 
-vector<int> getFileInput()
+void getFileInput(vector<int> &fileInput)
 {
-    vector<int> fileInput;
     string line;
 
     fstream file("../input/d1_input.txt");
@@ -17,16 +16,14 @@ vector<int> getFileInput()
     else
         while (getline(file, line))
             fileInput.push_back(stoi(line));
-
-    return fileInput;
 }
 
-int depthSweep(vector<int> inputFile)
+int depthSweep(vector<int> &fileInput)
 {
     int count = 0;
 
-    for (int i = 0; i < inputFile.size() - 3; i++)
-        if ((inputFile.at(i) + inputFile.at(i + 1) + inputFile.at(i + 2)) < (inputFile.at(i + 1) + inputFile.at(i + 2) + inputFile.at(i + 3)))
+    for (int i = 0; i < fileInput.size() - 3; i++)
+        if ((fileInput.at(i) + fileInput.at(i + 1) + fileInput.at(i + 2)) < (fileInput.at(i + 1) + fileInput.at(i + 2) + fileInput.at(i + 3)))
             count++;
 
     return count;
@@ -34,7 +31,9 @@ int depthSweep(vector<int> inputFile)
 
 int main()
 {
-    vector<int> inputFile = getFileInput();
-    cout << depthSweep(inputFile);
+    vector<int> fileInput;
+    getFileInput(fileInput);
+    cout << depthSweep(fileInput);
+    cout << endl;
     return 0;
 }

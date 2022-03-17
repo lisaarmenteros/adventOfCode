@@ -6,9 +6,8 @@
 using namespace std;
 
 // Opens file and converts file input to vector
-vector<int> getFileInput()
+void getFileInput(vector<int> &fileInput)
 {
-    vector<int> fileInput;
     string line;
 
     fstream file("../input/d1_input.txt");
@@ -18,12 +17,10 @@ vector<int> getFileInput()
     else
         while (getline(file, line))
             fileInput.push_back(stoi(line));
-
-    return fileInput;
 }
 
 // Sweep depth and determine how many times it increments
-int depthSweep(vector<int> fileInput)
+int depthSweep(vector<int> &fileInput)
 {
     int count = 0;
 
@@ -36,7 +33,9 @@ int depthSweep(vector<int> fileInput)
 
 int main()
 {
-    vector<int> fileInput = getFileInput();
+    vector<int> fileInput;
+    getFileInput(fileInput);
     cout << depthSweep(fileInput);
+    cout << endl;
     return 0;
 }
