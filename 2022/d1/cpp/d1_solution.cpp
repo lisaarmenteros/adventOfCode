@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// Opens file and converts file input to vector
+// Opens file and converts file input to vector of elves and their total calories consumed
 vector<int> getElves()
 {
     vector<int> elves;
