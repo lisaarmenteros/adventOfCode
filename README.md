@@ -14,6 +14,6 @@ java ${FILENAME}
 
 ### Executing C++ File
 ```
-g++ -o build/${FILENAME} ${FILENAME}.cpp
+g++ -std=c++11 -o build/${FILENAME} ${FILENAME}.cpp
 ./build/${FILENAME}
 ```
