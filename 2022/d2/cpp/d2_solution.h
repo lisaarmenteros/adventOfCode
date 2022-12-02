@@ -23,9 +23,10 @@ private:
         {'Y', 2},
         {'Z', 3}};
 
-public:
     vector<string> getFileInput();
-    int problem1(),
-        problem2(),
-        gameOutcome(char opponent, char you);
+    int gameOutcome(char opponent, char you);
+
+public:
+    int problem1();
+    int problem2();
 };
